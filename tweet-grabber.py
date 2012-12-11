@@ -1,4 +1,7 @@
-import pycurl, json, HTMLParser
+import pycurl, json, HTMLParser, struct
+from time import strptime
+from calendar import timegm
+
 
 STREAM_URL="https://stream.twitter.com/1.1/statuses/sample.json"
 
@@ -9,30 +12,15 @@ def get_twitter_info(filename):
 
 USER,PASS=get_twitter_info('twitter.password')
 
-print USER,PASS
+STRUCTFT="LI"
 
-with open('2012-12-09.bkl', 'r') as booklist:
-    stemmed={}
-    for escbook in [x.strip() for x in booklist.readlines()]:
-        book=HTMLParser.HTMLParser().unescape(escbook)
-        nothe=book.replace('the ', '')
-        noa=book.replace('a ', '')
-        noan=book.replace('an ', '')
-        nothea=nothe.replace('a ', '')
-        nothean=nothe.replace('an ', '')
-        noaan=noa.replace('an ', '')
-        stemmed[nothe]=book
-        stemmed[noa]=book
-        stemmed[noan]=book
-        stemmed[nothea]=book
-        stemmed[nothean]=book
-        stemmed[book]=book
+OUT_FILE='output'
 
-    strs=stemmed.keys()
-    print strs
-    
+TIMEFMT="%a %b %d %H:%M:%S +0000 %Y"
+
 class Client:
     def __init__(self):
+        self.output=open(OUT_FILE, 'wb+')
         self.buffer=""
         self.conn=pycurl.Curl()
         self.conn.setopt(pycurl.USERPWD, "%s:%s" %(USER,PASS))
@@ -47,9 +35,11 @@ class Client:
             self.buffer=""
             if not 'delete' in content and 'RT' in content['text']:
                 if not 'retweeted_status' in content:
-                    for book in strs:
-                        if book in content['text'].lower():
-                            print "%s\t%d\t%s" % (stemmed[book], content['id'], content['text'])
+                    self.output.write(struct.pack(STRUCTFT, long(content['id_str']), timegm(strptime(content['created_at'], TIMEFMT))))
+                    self.output.write(content['text'].encode('utf-8'))
+                    self.output.write('\n')
+                    self.output.flush()
+                    #print "%s\t%d\t%s" % (stemmed[book], content['id'], content['text'])
                     
 
 if __name__=="__main__":
