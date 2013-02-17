@@ -1,0 +1,1 @@
+To use, just import guess_language.py into python, and call the guessLanguageName(txt) function. For english, it will return 'English'.
