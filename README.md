@@ -16,6 +16,9 @@ To access the word frequency list, you will have to unpickle the file wordfreq.p
 `from collections import namedtuple
 WordFreq = namedtuple('WordFreq', ['rank','pos', 'frequency', 'dispersion'])`
 
+## Language Identifier
+
+To use the language identifier, simply look at the README in the guess_language folder.
 
 
 # Ranker
