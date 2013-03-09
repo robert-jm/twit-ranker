@@ -16,6 +16,9 @@ To access the word frequency list, you will have to unpickle the file wordfreq.p
 `from collections import namedtuple
 WordFreq = namedtuple('WordFreq', ['rank','pos', 'frequency', 'dispersion'])`
 
+## Wikipedia article Frequency List
+To access the frequency list of words in a wikipedia article, go to ./filter/wiki_freq/, and initialize the wiki_freq class with the appropriate title. Then to get the dictionary of frequencies, type : "objectName.d"
+
 ## Language Identifier
 
 To use the language identifier, simply look at the README in the guess_language folder.
