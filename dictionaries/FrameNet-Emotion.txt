@@ -1,0 +1,188 @@
+glad.a, joyful.a, jubilant.a
+
+annoyed.a, frustrated.a, irritated.a
+
+delight (in).v, delight.n, drudgery.n, enjoy.v, enjoyment.n, groove.v,
+luxuriate.v, pleasure.n, relish.v, savour.v
+
+delight (in).v, delight.n, drudgery.n, enjoy.v, enjoyment.n, groove.v,
+luxuriate.v, pleasure.n, relish.v, savour.v
+
+absorbing.a, captivating.a, engrossing.a, enthralling.a,
+fascinating.a, interesting.a
+
+dissatisfied.a, fulfilled.a, satisfied.a, unfulfilled.a
+
+shock.n, shocked.a, surprise.n, surprised.a
+
+compassion.n, empathize.v, feel_(for).v, pity.v, sympathize.v
+
+contrite.a, contrition.n, guilt.n, guilty.a, penitence.n, penitent.a,
+remorse.n, remorseful.a, remorseless.a, repent.v, repentance.n,
+repentant.a, rue.v, rueful.a, sorry.a, unrepentant.a
+
+ache.v, ambition.n, aspiration.n, aspire.v, covet.v, covetous.a,
+crave.v, craving.n, desire.n, desire.v, desired.a, desirous.a,
+dying.a, eager.a, fancy.v, feel_like.v, hanker.v, hankering.n, hope.n,
+hope.v, hunger.n, hunger.v, hungry.a, in_hopes_of.prep,
+in_the_hope_of.prep, interested.a, itch.v, loath.a, long.v, longing.n,
+lust.n, lust.v, pine.v, raring.a, reluctant.a, spoiling.a, thirst.n,
+thirst.v, thirsty.a, urge.n, want.v, wants.n, will.n, will.v, 
+wish(that).v, wish.n, wish.v, yearn.v, yearning.n, yen.n, yen.v
+
+agonize.v, fret.v, fuss.v, lose_sleep.v, obsess.v, obsession.n, worry.v
+
+abashed.a, affronted.a, agitated.a, agitation.n, agonized.a, agony.n,
+alarmed.a, all about.prep, amused.a, amusement.n, anger.n, angry.a,
+anguish.n, anguished.a, annoyance.n, annoyed.a, anxious.a, appalled.a,
+ashamed.a, astonished.a, astonishment.n, astounded.a, baffled.a,
+bafflement.n, befuddled.a, bewildered.a, bewilderment.n, blue.a,
+bored.a, boredom.n, chagrin.n, chagrined.a, concern.n, concerned.a,
+contented.a, covetous.a, crestfallen.a, cross.a, crushed.a,
+dejected.a, dejection.n, delight.n, delighted.a, demolished.a,
+depressed.a, desolate.a, despair.n, despondency.n, despondent.a,
+devastated.a, disappointed.a, disappointment.n, discomfited.a,
+discomfiture.n, disconcerted.a, disconcertion.n, disconsolate.a,
+discouraged.a, discouragement.n, disgruntled.a, disgruntlement.n,
+disheartened.a, dismay.n, dismayed.a, disorientation.n, disoriented.a,
+displeased.a, displeasure.n, disquiet.n, disquieted.a, distress.n,
+distressed.a, downcast.a, downhearted.a, ecstatic.a, elated.a,
+elation.n, embarrassed.a, embarrassment.n, embittered.a, enraged.a,
+exasperated.a, exasperation.n, excited.a, excitement.n, exhilarated.a,
+exhilaration.n, fascinated.a, fed up.a, fed-up.a, flabbergasted.a,
+flummoxed.a, flustered.a, frightened.a, furious.a, fury.n, glee.n,
+gleeful.a, glum.a, glumness.n, gratification.n, gratified.a,
+grief-stricken.a, grief.n, happy.a, harried.a, heartbreak.n,
+heartbroken.a, horrified.a, horror.n, humiliated.a, incensed.a,
+inconsolable.a, indignant.a, infuriated.a, interest.n, irate.a,
+irked.a, irritated.a, jubilant.a, livid.a, low-spirited.a,
+lugubrious.a, mad.a, miffed.a, miserable.a, mortification.n,
+mortified.a, mournful.a, mourning.n, mystification.n, mystified.a,
+nervous.a, nettled.a, nonplussed.a, offended.a, outrage.n,
+overjoyed.a, overwrought.a, peeved.a, perplexed.a, perplexity.n,
+perturbed.a, petrified.a, pleased.a, puzzlement.n, rattled.a,
+relaxed.a, resentful.a, revolted.a, revulsion.n, riled.a, ruffled.a,
+sad.a, saddened.a, sadness.n, shocked.a, sickened.a, sore.a, sorrow.n,
+sorrowful.a, startled.a, stressed.a, stunned.a, stupefaction.n,
+stupefied.a, sympathetic.a, sympathize.v, sympathy.n,
+terror-stricken.a, thrilled.a, tormented.a, traumatised.a,
+unsettled.a, unsympathetic.a, upset.a, vexation.n, vexed.a,
+woebegone.a, worried.a, wretched.a
+
+boil.v, burn.v, chafe.v, fume.v, seethe.v, simmer.v, smoulder.v, stew.v
+
+abash.v, aggravate.v, aggrieve.v, agonize.v, alarm.v, amaze.v,
+anger.v, annoy.v, antagonize.v, appeal.v, arouse.v, astonish.v,
+astound.v, baffle.v, beguile.v, bewilder.v, bewitch.v, boggle.v,
+bore.v, calm.v, captivate.v, charm.v, cheer.v, comfort.v,
+conciliate.v, confuse.v, console.v, crush.v, dazzle.v, delight.v,
+demolish.v, depress.v, destroy.v, devastate.v, disappoint.v,
+discomfit.v, disconcert.v, discourage.v, dishearten.v, displease.v,
+distress.v, disturb.v, embarrass.v, embitter.v, enchant.v,
+encourage.v, engage.v, enrage.v, entertain.v, enthrall.v,
+exasperate.v, excite.v, exhilarate.v, fascinate.v, faze.v,
+flabbergast.v, floor.v, flummox.v, fluster.v, frighten.v, frustrate.v,
+fulfill.v, gall.v, gladden.v, grate.v, gratify.v, harass.v, hearten.v,
+humiliate.v, impress.v, incense.v, infuriate.v, interest.v,
+intimidate.v, intrigue.v, irk.v, irritate.v, kill.v, madden.v,
+mollify.v, mortify.v, mystify.v, nettle.v, nonplus.v, offend.v,
+outrage.v, pacify.v, perplex.v, perturb.v, petrify.v, placate.v,
+please.v, puzzle.v, rankle.v, rattle.v, reassure.v, repel.v, revolt.v,
+rile.v, sadden.v, satisfy.v, scare.v, shake.v, shame.v, shock.v,
+shocker.n, sicken.v, sober.v, solace.v, soothe.v, spook.v, stagger.v,
+startle.v, stimulate.v, sting.v, stir.v, stun.v, stupefy.v,
+surprise.n, surprise.v, terrify.v, thrill.v, tickle.v, torment.v,
+traumatize.v, trouble.n, trouble.v, unnerve.v, unsettle.v, upset.v,
+vex.v, vexation.n, worry.v, wound.v, wow.v
+
+emotion.n, experience.v, feel.v, feelings.n, full.a, sense.n
+
+condone.v, excuse.v, forgive.v, forgiveness.n, pardon.v
+
+accolade.n, accuse.v, admiration.n, admire.v, admiring.a, applaud.v,
+appreciate.v, appreciation.n, appreciative.a, approbation.n,
+approving.a, blame.n, blame.v, boo.v, contempt.n, contemptuous.a,
+critical.a, damnation.n, deify.v, deplore.v, derisive.a,
+disapproval.n, disapprove.v, disapproving.a, disdain.n, disdain.v,
+disdainful.a, disrespect.n, esteem.n, esteem.v, exalt.v, exaltation.n,
+fault.n, fault.v, mock.v, mockery.n, prize.v, reprehensible.a,
+reproach.n, reproachful.a, respect.n, respect.v, revere.v,
+reverence.n, scorn.n, scorn.v, scornful.a, set store.v, stigma.n,
+stigmatize.v, stricture.n, uncritical.a, value.v, vilification.n
+
+bind.n, fix.n, jam.n, mess.n, misfortune.n, pickle.n, pinch.n,
+plight.n, predicament.n, problem.n, scrape.n, trouble.n
+
+abhor.v, abhorrence.n, abominate.v, adoration.n, adore.v, afraid.a,
+agape.a, antipathy.n, apprehensive.a, calm.a, comfort.n, compassion.n,
+cool.a, delight.v, despair.v, desperation.n, despise.v, detest.v,
+detestation.n, discomfort.n, dislike.n, dislike.v, dissatisfied.a,
+dread.n, dread.v, easy.a, empathetic.a, empathize.v, empathy.n,
+enjoy.v, enjoyment.n, envy.n, envy.v, fazed.a, fear.v, fed up.a,
+feverish.a, feverishly.adv, fond.a, fulfilled.a, fulfillment.n,
+grief-stricken.a, grieve.v, happily.adv, hate.v, hatred.n,
+interested.a, intimidated.a, irritated.a, like.v, loathe.v,
+loathing.n, love.v, luxuriate.v, mourn.v, nervous.a, nettled.a,
+pity.n, pity.v, pleasure.n, regret.n, regret.v, relish.n, relish.v,
+resent.v, resentment.n, rue.v, rueful.a, satisfaction.n, satisfied.a,
+savour.v, scared.a, solace.n, taken.a, terrified.a, unfazed.a,
+upset.a, worked up.a, worried.a
+
+abominable.a, absorbing.a, aggravating.a, aggravation.n, agonizing.a,
+agreeable.a, alarming.a, alienating.a, amazing.a, amusing.a,
+annoyance.n, annoying.a, appalling.a, astonishing.a, astounding.a,
+baffling.a, beguiling.a, bewildering.a, bewitching.a,
+blood-curdling.a, boring.a, bothersome.a, breathtaking.a, calming.a,
+captivating.a, charm_((count)).n, charm_((mass)).n, charming.a,
+cheering.a, chilling.a, color.n, comforting.a, comical.a, confusing.a,
+consoling.a, cool.a, delight.n, delightful.a, depressing.a,
+devastating.a, disagreeable.a, disappointing.a, discomfiting.a,
+discomforting.a, disconcerting.a, discouraging.a, disgusting.a,
+disheartening.a, disillusioning.a, dismaying.a, disorientating.a,
+displeasing.a, distasteful.a, distressing.a, disturbing.a, dreadful.a,
+droll.a, dull.a, earth-shattering.a, electrifying.a, embarrassing.a,
+embittering.a, empty.a, enchanting.a, encouraging.a, engrossing.a,
+enjoyable.a, enraging.a, entertaining.a, enthralling.a,
+exasperating.a, exciting.a, exhilarating.a, fascinating.a,
+formidable.a, frightening.a, fulfilling.a, full.a, funny.a, galling.a,
+ghastly.a, gratifying.a, gripping.a, hair-raising.a, harrowing.a,
+heart-rending.a, heart-stopping.a, heart-warming.a, heartbreaking.a,
+heartening.a, hilarious.a, humorous.a, impressive.a, infuriating.a,
+insulting.a, interesting.a, intimidating.a, intriguing.a,
+invigorating.a, irksome.a, irritating.a, jaw-dropping.a, jolly.a,
+maddening.a, mind-boggling.a, mind-numbing.a, mortifying.a,
+mystifying.a, nerve-racking.a, nice.a, offensive.a, pacifying.a,
+pathetic.a, perplexing.a, pitiful.a, placating.a, pleasant.a,
+pleasing.a, pleasurable.a, poignant.a, reassuring.a, recreation.n,
+relaxation.n, relaxing.a, repellent.a, rest.n, revolting.a, rich.a,
+rousing.a, sad.a, saddening.a, satisfying.a, scary.a, shocking.a,
+sickening.a, side-splitting.a, sobering.a, solemn.a, soothing.a,
+spine-chilling.a, spine-tingling.a, startling.a, stimulating.a,
+stinging.a, stirring.a, stressful.a, strike a chord.v, striking.a,
+stupefying.a, surprising.a, suspenseful.a, tear-jerking.a, tedious.a,
+terrifying.a, thorny.a, thrilling.a, tiresome.a, tiring.a,
+tormenting.a, touching.a, traumatic.a, traumatising.a, troublesome.a,
+troubling.a, unexciting.a, unfulfilling.a, unfunny.a, unnerving.a,
+unpleasant.a, unpleasing.a, unsettling.a, uplifting.a, upsetting.a,
+vexation.n, vexatious.a, vexing.a, white-knuckle.a, worrisome.a,
+worrying.a
+
+afraid.a, apprehension.n, dread.n, fear.n, freaked.a, frightened.a,
+live_in_fear.v, nervous.a, scared.a, terrified.a, terror.n
+
+annoyed.a, frustrated.a, irritated.a
+
+accolade.n, accuse.v, admiration.n, admire.v, admiring.a, applaud.v,
+appreciate.v, appreciation.n, appreciative.a, approbation.n,
+approving.a, blame.n, blame.v, boo.v, contempt.n, contemptuous.a,
+critical.a, damnation.n, deify.v, deplore.v, derisive.a,
+disapproval.n, disapprove.v, disapproving.a, disdain.n, disdain.v,
+disdainful.a, disrespect.n, esteem.n, esteem.v, exalt.v, exaltation.n,
+fault.n, fault.v, mock.v, mockery.n, prize.v, reprehensible.a,
+reproach.n, reproachful.a, respect.n, respect.v, revere.v,
+reverence.n, scorn.n, scorn.v, scornful.a, set store.v, stigma.n,
+stigmatize.v, stricture.n, uncritical.a, value.v, vilification.n
+
+disgraceful.a, shameful.a
+
+deceive.v, deception.n, fool.v, mislead.v, trick.v
