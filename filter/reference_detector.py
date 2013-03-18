@@ -18,6 +18,7 @@ class ReferenceDetector:
             word = word.strip()
             self.ref_words.add(word)
 
+    # WARNING: Will not scale. Only for testing for now.
     def detectReference(self, tweet):
         bucket = re.sub(r'\W+ ','',tweet).split()
         count = 0
