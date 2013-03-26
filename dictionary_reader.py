@@ -67,6 +67,18 @@ wordnet2mpqa_tbl = {'n': 'noun',
 		'v':'verb',
 		'a':'adj'}
 
+twitter2wordnet_tbl={
+	'N': 'n',
+	'V':'v',
+	'A':'a',
+	'R':'r',
+		}
+
+twitter2mpqa_tbl = {'N': 'noun',
+		'V': 'verb',
+		'A': 'adj',
+		'R': 'adv'}
+
 def get_affect():
 	"""
 	return a map that has word -> (polarity, emotion, POS)
@@ -124,7 +136,7 @@ class AffectDictionary:
 	dictionary for the lookup function.
 
 	"""
-	def __init__():
+	def __init__(self):
 		self.affect = get_affect()
 		self.emoticons = get_emoticons()
 	def lookup(token, pos=None):
@@ -145,34 +157,29 @@ class AffectDictionary:
 
 		return (0, 'neutral')
 
-twitter2mpqa_tbl = {'N': 'noun',
-		'V': 'verb',
-		'A': 'adj',
-		'R': 'adv'}
 
 class BigDictionary:
 	""" This dictionary uses WordNet Affect, Opinion Lexicon, MPQA and the emoticon
 	dictionary for the lookup function.
 	"""
 
-	def __init__():
+	def __init__(self):
 		self.bing, self.mpqa = get_bing(), get_mpqa()
 		self.emoticons, self.affect = get_emoticons(), get_affect()
 
-	def lookup(token, pos=None):
+	def lookup(self,token, pos=None):
 		"""
 		The function takes in a token and a pos (in twitter POS tag set
 		standard)
 
-		Return -1(negative), 0(neutral), 1(positive), 2(both), 3(emotional)
+		Return -1(negative), 0(neutral), 1(positive), 2(both)
 		"""
 		if token in self.emoticons:
 			return self.emoticons[token][0][0]
 
-		if pos  not in twitter2mpqa_tbl:
-			return 0
+		if pos in twitter2mpqa_tbl:
+			pos = twitter2mpqa_tbl[pos]
 
-		pos = twitter2mpqa_tbl[pos]
 		if token in self.bing:
 			return self.bing[token]
 		if token in self.affect:
