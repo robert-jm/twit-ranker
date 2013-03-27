@@ -3,6 +3,7 @@ import sys
 from nltk.stem.wordnet import WordNetLemmatizer
 import dictionary_reader as dr
 import cPickle as pickle
+import spell_checker as s
 
 POSTAGGER_PATH = './ark-tweet-nlp-0.3.2'
 PREPROCESSED_PATH = './preprocessed'
@@ -22,7 +23,17 @@ def pos_tag(filename):
 	return l
 
 def spell_check(l):
-	pass
+	"""
+	Return a list of spell-checked, pos-tagged tweets in the format of [tokens, pos]
+	"""
+	ret = []
+	for tweet in l:
+		tokens = []
+		for t in tweet[0]:
+			tokens.append(s.correct(t))
+		ret.append([tokens, tweet[1]])
+	return ret
+
 
 def reduce_form(l):
 	""" Stemming/lemmatizing + drop hashtag and handles
