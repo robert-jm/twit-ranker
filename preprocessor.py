@@ -1,9 +1,12 @@
 import subprocess
 import sys
+from nltk.stem.wordnet import WordNetLemmatizer
+import dictionary_reader as dr
 import cPickle as pickle
 
 POSTAGGER_PATH = './ark-tweet-nlp-0.3.2'
 PREPROCESSED_PATH = './preprocessed'
+lmtzr = WordNetLemmatizer()
 
 def pos_tag(filename):
 	"""
@@ -16,6 +19,7 @@ def pos_tag(filename):
 		tokens = elements[0].split()
 		pos = elements[1].split()
 		l.append([tokens,pos])
+	return l
 
 def spell_check(l):
 	pass
@@ -23,9 +27,21 @@ def spell_check(l):
 def reduce_form(l):
 	""" Stemming/lemmatizing + drop hashtag and handles
 	"""
-	pass
+	for tok, pos in l:
+		for idx, val in enumerate(tok):
+			if (val[0]=='@' or val[0]=='#') and len(val)>1:
+				val = val[1:]
 
-if __name__ = "__main__":
+			tag = pos[idx]
+			if tag in dr.twitter2wordnet_tbl:
+				tag = dr.twitter2wordnet_tbl[tag]
+			tok[idx] = lmtzr.lemmatize(val, tag)
+
+if __name__ == "__main__":
+	if len(sys.argv)==1:
+		print 'usage: python preprocessor.py file1 file2 ...'
+		sys.exit(0)
+	
 	arg = sys.argv[1:]
 	# process every tweet file
 	for filename in arg:
@@ -33,5 +49,4 @@ if __name__ = "__main__":
 		spell_check(l)
 		reduce_form(l)
 		pickle.dump(l, open('PREPROCESSED'+'/'+filename+'.pkl', 'wb'))
-		
 
