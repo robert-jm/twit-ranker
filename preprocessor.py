@@ -55,7 +55,7 @@ def reduce_form(l):
 		for idx, val in enumerate(tok):
 			if (val[0]=='@' or val[0]=='#') and len(val)>1:
 				val = val[1:]
-				tok[idx] = val
+				tok[idx] = val.lower()
 
 			tag = pos[idx]
 			if tag in dr.twitter2wordnet_tbl:
@@ -63,7 +63,7 @@ def reduce_form(l):
 			else:
 				continue
 			
-			tok[idx] = lmtzr.lemmatize(val, tag)
+			tok[idx] = lmtzr.lemmatize(val, tag).lower()
 	return ret
 
 if __name__ == "__main__":
