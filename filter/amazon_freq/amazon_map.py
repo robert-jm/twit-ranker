@@ -4,14 +4,21 @@ sys.path.append('../')
 import word_freq_dictionary as w
 import amazon_scraper 
 from bs4 import BeautifulSoup
+import google_search as g
 
 class amaz_freq:
 	total = 0.0
 	alphabet = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
 	eng_frequency = w.EnglishFrequency()
-	threshold = 1000000
+	threshold = 100
 
-	def __init__(self, url):
+	def __init__(self, term):
+		url = ''
+		urls = g.search(term)
+		for i in urls:
+			if 'product-reviews' in i:
+				url = i
+		
 		self.filt = []
 		self.d = {}
 		page = requests.get(url).text
@@ -48,6 +55,12 @@ class amaz_freq:
 				temp = 0 #Word not in the english language
 			if self.d[i] / self.total >= self.threshold * temp:
 				ret = ret + [i]
+		if 'PermalinkComment' in ret:
+			ret.remove('PermalinkComment')
+		if 'Amazon' in ret:
+			ret.remove('Amazon')
+		if 'reviews' in ret:
+			ret.remove('reviews')
 #		ret.remove('Wikia')
 #		ret.remove('website')
 #		ret.remove('websites')
