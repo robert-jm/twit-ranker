@@ -35,13 +35,28 @@ if __name__ == '__main__':
 			notes[bookname] = defaultdict(list)
 			for item in l:
 				tokens, pos = item[0], item[1]
-				notes[bookname]['pol'].append(analyzer.get_polarity_score(tokens,pos))
-				notes[bookname]['cue'].append(analyzer.count_cue(tokens,pos))
-				notes[bookname]['emo'].append(analyzer.get_emotion(tokens))
+				pol_tmp = notes[bookname]['pol']
+				pol_tmp.append(analyzer.get_polarity_score(tokens,pos))
+				notes[bookname]['pol'] = pol_tmp
+				#notes[bookname]['pol'].append(analyzer.get_polarity_score(tokens,pos))
+				print tokens
+				cue_tmp = notes[bookname]['cue']
+				print 'computer before:',cue_tmp
+				cue_tmp.append(analyzer.count_cue(tokens,pos))
+				print 'computer after; ',cue_tmp
+				notes[bookname]['cue'] = cue_tmp
+				#notes[bookname]['cue'].append(analyzer.count_cue(tokens,pos))
+				emo_tmp = notes[bookname]['emo']
+				emo_tmp.append(analyzer.get_emotion(tokens))
+				notes[bookname]['emo'] = emo_tmp
+				#notes[bookname]['emo'].append(analyzer.get_emotion(tokens))
 				analyzer.count(tokens,pos)
 			for item in l:
 				tokens, pos = item[0], item[1]
-				notes[bookname]['pmi'].append(analyzer.pmi(tokens))
+				pmi_tmp = notes[bookname]['pmi']
+				pmi_tmp.append(analyzer.pmi(tokens))
+				notes[bookname]['pmi'] = pmi_tmp
+				#notes[bookname]['pmi'].append(analyzer.pmi(tokens))
 		pickle.dump(notes, open(week+'.score','wb+'))
 		print 'saved data in ', week+'.score'
 
