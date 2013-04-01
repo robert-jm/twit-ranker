@@ -31,12 +31,22 @@ if __name__=='__main__':
 				else:
 					print 'avg sentiwordnet ', 0
 				# cue
-				cue_sum = sum(l[book]['cue'])
-				print 'cue sum ',cue_sum
-				if len(l[book]['cue'])!=0:
-					print 'avg cue ', cue_sum/len(l[book]['cue'])
-				else:
-					print 'avg cue ', 0
+				cues = l[book]['cue']
+				p, n = 0, 0
+				print 'cues: ',cues
+				for c in cues:
+					print c
+					p +=c[0]
+					n +=c[1]
+				print 'positive cue ',p
+				print 'negative cue ', n
+				if len(cues)!=0:
+					print 'p cue avg ', p/len(cues)
+					print 'n cue avg ', n/len(cues)
+				#if len(l[book]['cue'])!=0:
+				#	print 'avg cue ', cue_sum/len(l[book]['cue'])
+				#else:
+				#	print 'avg cue ', 0
 				# emotion
 				e_dict = defaultdict(int)
 				for d in l[book]['emo']:

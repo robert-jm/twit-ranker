@@ -62,9 +62,10 @@ class Analyzer:
 				posi +=1
 				neg +=1
 		
-		if posi==neg or (threshold>posi and threshold>neg):
-			return 0
-		return 1 if posi>neg else -1
+		return (posi, neg)
+		#if posi==neg or (threshold>posi and threshold>neg):
+		#	return 0
+		#return 1 if posi>neg else -1
 
 	def get_emotion(self, tweet):
 		"""
@@ -93,8 +94,6 @@ class Analyzer:
 		pmi = 0
 		for token in tweet:
 			pmi += numpy.log((0.01+Analyzer.pos_cnt[token])/(0.01+Analyzer.neg_cnt[token]))
-			print pmi
-		print pmi/len(tweet)
 		
 		return pmi/len(tweet)
 
