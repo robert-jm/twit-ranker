@@ -42,6 +42,7 @@ if __name__ == '__main__':
 			for item in l:
 				tokens, pos = item[0], item[1]
 				notes[bookname]['pmi'].append(analyzer.pmi(tokens))
-		pickle.dump(notes, open(week[:-1]+'.score','wb+'))
+		pickle.dump(notes, open(week+'.score','wb+'))
+		print 'saved data in ', week+'.score'
 
 
