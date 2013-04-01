@@ -5,10 +5,19 @@ from nltk.stem.wordnet import WordNetLemmatizer
 import dictionary_reader as dr
 import cPickle as pickle
 import spell_checker as s
+import fnmatch
+import os
 
 POSTAGGER_PATH = './ark-tweet-nlp-0.3.2'
 PREPROCESSED_PATH = './preprocessed'
 lmtzr = WordNetLemmatizer()
+
+
+def recursive_glob(rootdir='.', pattern='*'):
+    return [os.path.join(rootdir, filename)
+            for rootdir, dirnames, filenames in os.walk(rootdir)
+            for filename in filenames
+            if fnmatch.fnmatch(filename, pattern)]
 
 def clean_bin(filename):
 	out = open(filename+'.clean','w+')
@@ -68,16 +77,17 @@ def reduce_form(l):
 
 if __name__ == "__main__":
 	if len(sys.argv)==1:
-		print 'usage: python preprocessor.py file1 file2 ...'
+		print 'usage: python preprocessor.py folder1 folder2'
 		sys.exit(0)
 	
 	arg = sys.argv[1:]
 	# process every tweet file
-	for filename in arg:
-		clean_bin(filename)
-		l = pos_tag(filename+'.clean')
-		l = spell_check(l)
-		print 'done spellchecking'
-		l = reduce_form(l)
-		pickle.dump(l, open(filename+'.pkl', 'wb+'))
+	for fi in arg:
+		for filename in recursive_glob(fi):
+			clean_bin(filename)
+			l = pos_tag(filename+'.clean')
+			l = spell_check(l)
+			print 'done spellchecking'
+			l = reduce_form(l)
+			pickle.dump(l, open(filename+'.pkl', 'wb+'))
 
