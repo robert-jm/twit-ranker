@@ -1,6 +1,7 @@
 import dictionary_reader as dr
 import sentiwordnet as senti
-import math
+import numpy
+import operator
 from collections import defaultdict
 
 class Analyzer:
@@ -46,7 +47,7 @@ class Analyzer:
 		output:
 		sentiment: +1 (positive), -1 (negative), 0 (neutral)
 		"""
-		pos, neg, tag = 0, 0, ''
+		posi, neg, tag = 0, 0, ''
 		for idx, elem in enumerate(tweet):
 			if pos[idx] not in dr.twitter2mpqa_tbl:
 				tag = 'E' # assume it's emoticon
@@ -56,14 +57,14 @@ class Analyzer:
 			if sent<0:
 				neg +=1
 			elif sent==1:
-				pos +=1
+				posi +=1
 			elif sent >1:
-				pos +=1
+				posi +=1
 				neg +=1
 		
-		if pos==neg or (threhold>pos and threshold>neg):
+		if posi==neg or (threshold>posi and threshold>neg):
 			return 0
-		return 1 if pos>neg else -1
+		return 1 if posi>neg else -1
 
 	def get_emotion(self, tweet):
 		"""
@@ -76,8 +77,14 @@ class Analyzer:
 		emo = defaultdict(int)
 		for elem in tweet:
 			t = self.affect.lookup(elem)
-			emo[t[1]] += 1
-		return max(emo, key=lambda x: emo[x[0]])
+			if len(t)==1:
+				for e in t:
+					emo[e[1]] +=1
+			else:
+				emo[t[1]] += 1
+		#print emo
+		#return max(emo, key=lambda x: emo.get(x))
+		return emo
 
 	def pmi(self, tweet):
 		"""
@@ -85,7 +92,9 @@ class Analyzer:
 		"""
 		pmi = 0
 		for token in tweet:
-			pmi += math.log((1+pos_cnt[token])/(1+neg_cnt[token]))
+			pmi += numpy.log((0.01+Analyzer.pos_cnt[token])/(0.01+Analyzer.neg_cnt[token]))
+			print pmi
+		print pmi/len(tweet)
 		
 		return pmi/len(tweet)
 
@@ -96,19 +105,19 @@ class Analyzer:
 		on all tweets before using the pmi function
 		"""
 		for idx, elem in enumerate(tweet):
-			nbr = _near(tweet, idx)
-			pos_cnt[elem] += len([x for x in nbr if
+			nbr = self._near(tweet, idx)
+			Analyzer.pos_cnt[elem] += len([x for x in nbr if
 				self.big.lookup(x,pos[idx])==1])
-			neg_cnt[elem] += len ([x for x in nbr if
+			Analyzer.neg_cnt[elem] += len ([x for x in nbr if
 				self.big.lookup(x,pos[idx])==-1])
 			both = len([x for x in nbr if self.big.lookup(x, pos[idx])==2])
-			pos_cnt[elem]+= both
-			neg_cnt[elem]+= both
+			Analyzer.pos_cnt[elem]+= both
+			Analyzer.neg_cnt[elem]+= both
 
 	def reset_cnt(self):
 		pos_cnt, neg_cnt = defaultdict(int), defaultdict(int)
 	
-	def _near(a, tok_idx, n=10):
+	def _near(self,a, tok_idx, n=10):
 		"""
 		the NEAR operator: articles is a list of tokens
 		"""

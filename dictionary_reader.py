@@ -139,7 +139,7 @@ class AffectDictionary:
 	def __init__(self):
 		self.affect = get_affect()
 		self.emoticons = get_emoticons()
-	def lookup(token, pos=None):
+	def lookup(self, token, pos=None):
 		"""
 		The function takes in a token and a pos (in twitter POS tag set
 		standard)
