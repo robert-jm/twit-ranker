@@ -60,13 +60,6 @@ indices = random.sample(range(len(dataset)), int(len(dataset)*0.5))
 train = [dataset[i] for i in sorted(indices)]
 test = [x for x in dataset if x not in train]
 
-print train
-print len(train)
-
-print '------'
-print test
-print len(test)
-
 with open('strap.train', 'w') as f:
 	for item in train:
 		f.write(data_to_str(item))

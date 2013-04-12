@@ -171,13 +171,15 @@ for k,v in ranks.iteritems():
 		if 'cue' in items:
 			count += items['cue']
 	cues_d[k] = count
+ranks['112263']['week4']['rank']=35
+ranks['112263']['week6']['rank']=24
 
-tops = sorted(cues_d, key=cues_d.get, reverse=True)[:20]
+
+tops = sorted(cues_d, key=cues_d.get, reverse=True)[:50]
 
 t_d = {}
 for t in tops:
 	t_d[t] = dict(ranks[t])
 
 pickle.dump(t_d, open('tops.pkl','wb'))
-
 
