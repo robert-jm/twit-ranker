@@ -68,11 +68,11 @@ print test
 print len(test)
 
 with open('strap.train', 'w') as f:
-	for item in dataset:
+	for item in train:
 		f.write(data_to_str(item))
 
 with open('strap.test', 'w') as f:
-	for item in dataset:
+	for item in test:
 		f.write(data_to_str(item))
 
 
