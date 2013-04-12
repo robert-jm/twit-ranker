@@ -44,6 +44,65 @@ def get_stat(d):
 			print '++++++++++++++++'
 
 
+def neutral_classifier(emo):
+	total = sum(emo.values())
+	if emo['neutral']/float(total) >=0.97:
+		return 1
+	else:
+		return -1
+
+def sadness_classifier(emo):
+	if emo['sadness']>=2:
+		return 1
+	else:
+		return -1
+
+def joy_classifier(emo):
+	total = sum(emo.values())
+	if emo['joy']/float(total)>=0/01:
+		return 1
+	else:
+		return -1
+
+def senti_classifier(score):
+	if score>=2:
+		return -1
+	else:
+		return 1
+
+def num_cue_classifier(cues):
+	if cues>=50:
+		return 1
+	else:
+		return -1
+
+def neg_classifier(n_cues):
+	if n_cues >= 30:
+		return 1
+	else:
+		return -1
+
+def pos_classifier(p_cues, n_cues):
+	cues = p_cues + n_cues
+	if p_cues/float(cues) > n_cues/float(cues):
+		return 1
+	else:
+		return -1
+
+def pmi_classifier(pmi):
+	if pmi>=0.5:
+		return -1
+	else:
+		return 1
+
+def fusion_classifer(d):
+	s=neutral_classifier(d['emo'])+sadness_classifier(d['emo'])+joy_classifier(d['emo'])
+	s+=senti_classifier(d['avg_sent'])+num_cue_classifier(d['cue'])+neg_classifier(d['n_cue'])
+	s+=pos_classifier(d['p_cue'], d['n_cue'])
+	s+=pmi_classifier(d['pmi'])
+
+	return s
+
 # For every book, map week -> {rank, all kinds of stats}
 
 if __name__ =='__main__':
@@ -103,9 +162,22 @@ if __name__ =='__main__':
 
 
 
+# Sort the whole list of books be descending number of received tweets. 
 
+cues_d = {}
+for k,v in ranks.iteritems():
+	count = 0
+	for key, items in v.iteritems():
+		if 'cue' in items:
+			count += items['cue']
+	cues_d[k] = count
 
+tops = sorted(cues_d, key=cues_d.get, reverse=True)[:20]
 
+t_d = {}
+for t in tops:
+	t_d[t] = dict(ranks[t])
 
+pickle.dump(t_d, open('tops.pkl','wb'))
 
 
